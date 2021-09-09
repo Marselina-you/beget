@@ -25,7 +25,7 @@ const del = require('del');
 // Определяем логику работы Browsersync
 function browsersync() {
 	browserSync.init({ // Инициализация Browsersync
-		server: { baseDir: 'app/' }, // Указываем папку сервера
+		proxy: "beget", // Указываем папку сервера
 		notify: false, // Отключаем уведомления
 		online: true // Режим работы: true или false
 	})
@@ -90,6 +90,7 @@ function startwatch() {
 	watch('app/**/*.html').on('change', browserSync.reload);
 	// Мониторим папку-источник изображений и выполняем images(), если есть изменения
 	watch('app/images/src/**/*', images);
+	watch('app/**/*.php').on('change', browserSync.reload);
  
 }
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
