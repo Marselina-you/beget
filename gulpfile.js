@@ -49,22 +49,7 @@ function styles() {
 	.pipe(dest('app/css/')) // Выгрузим результат в папку "app/css/"
 	.pipe(browserSync.stream()) // Сделаем инъекцию в браузер
 }
-async function images() {
-	imagecomp(
-		"app/images/src/**/*", // Берём все изображения из папки источника
-		"app/images/dest/", // Выгружаем оптимизированные изображения в папку назначения
-		{ compress_force: false, statistic: true, autoupdate: true }, false, // Настраиваем основные параметры
-		{ jpg: { engine: "mozjpeg", command: ["-quality", "75"] } }, // Сжимаем и оптимизируем изображеня
-		{ png: { engine: "pngquant", command: ["--quality=75-100", "-o"] } },
-		{ svg: { engine: "svgo", command: "--multipass" } },
-		{ gif: { engine: "gifsicle", command: ["--colors", "64", "--use-col=web"] } },
-		function (err, completed) { // Обновляем страницу по завершению
-			if (completed === true) {
-				browserSync.reload()
-			}
-		}
-	)
-}
+
 function cleanimg() {
 	return del('app/images/dest/**/*', { force: true }) // Удаляем все содержимое папки "app/images/dest/"
 }
@@ -89,7 +74,7 @@ function startwatch() {
 	// Мониторим файлы HTML на изменения
 	watch('app/**/*.html').on('change', browserSync.reload);
 	// Мониторим папку-источник изображений и выполняем images(), если есть изменения
-	watch('app/images/src/**/*', images);
+	
 	watch('app/**/*.php').on('change', browserSync.reload);
  
 }
@@ -100,10 +85,9 @@ exports.scripts = scripts;
 // Экспортируем функцию styles() в таск styles
 exports.styles = styles;
 // Экспорт функции images() в таск images
-exports.images = images;
-// Экспортируем функцию cleanimg() как таск cleanimg
+
 exports.cleanimg = cleanimg;
 // Создаем новый таск "build", который последовательно выполняет нужные операции
 exports.build = series(cleandist, styles, scripts, images, buildcopy);
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = parallel(styles, scripts, browsersync, startwatch);
+exports.default = parallel(styles, scripts,  browsersync, startwatch);
