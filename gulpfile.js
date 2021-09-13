@@ -13,12 +13,14 @@ const sass = require('gulp-sass')(require('sass'));
 const less = require('gulp-less');
 // Подключаем Autoprefixer
 const autoprefixer = require('gulp-autoprefixer');
- 
 // Подключаем модуль gulp-clean-css
 const cleancss = require('gulp-clean-css');
+// Подключаем gulp-imagemin для работы с изображениями
+const imagemin = require('gulp-imagemin');
+// Подключаем модуль gulp-newer
+const newer = require('gulp-newer');
  
-// Подключаем compress-images для работы с изображениями
-const imagecomp = require('compress-images');
+
  
 // Подключаем модуль del
 const del = require('del');
@@ -49,6 +51,12 @@ function styles() {
 	.pipe(dest('app/css/')) // Выгрузим результат в папку "app/css/"
 	.pipe(browserSync.stream()) // Сделаем инъекцию в браузер
 }
+function images() {
+	return src('app/images/src/**/*') // Берём все изображения из папки источника
+	.pipe(newer('app/images/dest/')) // Проверяем, было ли изменено (сжато) изображение ранее
+	.pipe(imagemin()) // Сжимаем и оптимизируем изображеня
+	.pipe(dest('app/images/dest/')) // Выгружаем оптимизированные изображения в папку назначения
+}
 
 function cleanimg() {
 	return del('app/images/dest/**/*', { force: true }) // Удаляем все содержимое папки "app/images/dest/"
@@ -74,7 +82,7 @@ function startwatch() {
 	// Мониторим файлы HTML на изменения
 	watch('app/**/*.html').on('change', browserSync.reload);
 	// Мониторим папку-источник изображений и выполняем images(), если есть изменения
-	
+	watch('app/images/src/**/*', images);
 	watch('app/**/*.php').on('change', browserSync.reload);
  
 }
@@ -85,7 +93,8 @@ exports.scripts = scripts;
 // Экспортируем функцию styles() в таск styles
 exports.styles = styles;
 // Экспорт функции images() в таск images
-
+exports.images = images;
+// Экспортируем функцию cleanimg() как таск cleanimg
 exports.cleanimg = cleanimg;
 // Создаем новый таск "build", который последовательно выполняет нужные операции
 exports.build = series(cleandist, styles, scripts, images, buildcopy);
