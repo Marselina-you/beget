@@ -14,7 +14,7 @@
       <div class="block-menu d-flex">
         <div class="block-menu__item col-lg-3 fontTahoma size26px"><a href="">выйти</a></div>
         <div class="block-menu__item col-lg-3 fontTahoma size26px"><a href="forma1.php">добавить</a></div>
-        <div class="block-menu__item col-lg-3 fontTahoma size26px"><a href="">редактировать</a></div>
+        <div class="block-menu__item col-lg-3 fontTahoma size26px"><a href="">редак-овать</a></div>
         <div class="block-menu__item col-lg-3 fontTahoma size26px"><a href="adminView.php">просмотр всех</a></div>
         </div>
     </div>
