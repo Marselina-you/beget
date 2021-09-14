@@ -11,7 +11,7 @@
 <body>
 	<h1>UUUUUUrrrrr</h1>
 	<?php echo(kkk); ?>
-	<img src="images/dest/calex.png">
+	<img src="images/dest/seviche.png">
 <script src="js/app.min.js"></script>
 </body>
 </html>
