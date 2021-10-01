@@ -3,6 +3,7 @@ $name_cookie = $_COOKIE['name'];
 $value_cookie = $_COOKIE['value'];
 $ingredients_cookie = $_COOKIE['ingredients'];
 $weight_cookie = $_COOKIE['weight'];
+
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -21,9 +22,9 @@ if(isset($_COOKIE['name'])){
 	$head = '<div class="col-lg-12 cookie-form d-flex flex-column align-items-center">
     	<div class="block-cookie colorGrey"><b>Вы будете жрать  '.$name_cookie. '!</br>по цене '.$value_cookie. '</div>
     		
-    		<a href="user_delete_form.php">оформить заказ</a></div>';
+    		<a href="'.$value_cookie. '">оформить заказ</a></div>';
 	echo $head;
-	
+	require_once($value_cookie);
 	}?>
 </body>
 </html>
