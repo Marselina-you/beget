@@ -1,3 +1,10 @@
+<?php 
+$select_c = '0 товаров';
+if(isset($_COOKIE['name'])){
+    $head = '<div class="col-lg-12 cookie-form d-flex flex-column align-items-center">
+    	<div class="block-cookie colorGrey"><b>Вы будете жрать  '.$name_cookie. '!</br>по цене '.$value_cookie. '</div>
+    		
+    		<a href="user_delete_form.php">оформить заказ</a></div>';}?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +56,7 @@ if (isset($_GET['size']) == "maindishes") {
                	<form method="post">
 		    	        <div class="block-product-right-title d-flex justify-content-center align-items-center">
 
-		    		        <div class="block-product-right-title__name whitecolor fontSans size22px">'.$info['name'].'</div>
+		    		        <div class="block-product-right-title__name whitecolor fontSans size22px">'.$info['name'].'</div> 
 		    		        <input type="text" name="name" value="'.$info['name'].'">';
 				   echo'<div class="block-product-right-title__value whitecolor fontSans size22px">'.$info['value'].'<span>&nbsp;&#8364;</span></div>
 
@@ -65,10 +72,12 @@ if (isset($_GET['size']) == "maindishes") {
 				        <div class="buttonButton">
 				        	
 				        
-				        	<input type="submit" name="order"></div>
+				        	<input type="submit" name="submit"></div>
 				        	
 				        </form>
-				        </div></div>
+				        </div>
+				        <div class="block-product-right-title__name whitecolor fontSans size22px"><a href="cart.php">КОРЗИНА</a></div></div>
+				        <div class="block-product-right-title__name whitecolor fontSans size22px">'.$select_c.'</div></div>
 				        </div>
 		        </div>';  
 		} ?>
@@ -93,13 +102,8 @@ if (isset($_GET['size']) == "maindishes") {
        
         
         <script src="js/menu.js"></script>
-    <?php 
-
-if(isset($_COOKIE['name'])){
-	echo $head;
+    
 	
-	}
-	?>
     </body>
 </html>
 
