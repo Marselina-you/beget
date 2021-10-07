@@ -1,19 +1,18 @@
 <?php
 $name = $_POST['name'];
 $value = $_POST['value'];
-$ingredients = $_POST['ingredients'];
+
 $weight = $_POST['weight'];
 
 if (isset($_POST['submit'])) {
   setcookie('name', $name);
   setcookie('value', $value);
-  setcookie('ingredients', $ingredients);
   setcookie('weight', $weight);
+  setcookie('arr', $info);
    
 }
 $name_cookie = $_COOKIE['name'];
 $value_cookie = $_COOKIE['value'];
-$ingredients_cookie = $_COOKIE['ingredients'];
 $weight_cookie = $_COOKIE['weight'];
 ?><!DOCTYPE html>
 <html>
@@ -28,9 +27,11 @@ $weight_cookie = $_COOKIE['weight'];
 <body>
 	
 	<?php echo(kkk); 
+	
 	require_once('menu.php');?>
 	
 	<div class="block">
+		<a target="_blank" href="delCook.php">удалить</a>
 		<a target="_blank" href="doc.1.html">Документ 1</a>
 	</div>
 	<div class="block"></div>
