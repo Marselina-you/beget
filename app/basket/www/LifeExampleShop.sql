@@ -7,7 +7,7 @@
 -- Server version: 5.1.40
 -- PHP Version: 5.3.3
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";--Общий смысл: не надо полю auto_increment вообще пытаться присваивать явные значения
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;

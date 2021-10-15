@@ -1,20 +1,4 @@
-<?php
-$name = $_POST['name'];
-$value = $_POST['value'];
-
-$weight = $_POST['weight'];
-
-if (isset($_POST['submit'])) {
-  setcookie('name', $name);
-  setcookie('value', $value);
-  setcookie('weight', $weight);
-  setcookie('arr', $info);
-   
-}
-$name_cookie = $_COOKIE['name'];
-$value_cookie = $_COOKIE['value'];
-$weight_cookie = $_COOKIE['weight'];
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -25,19 +9,20 @@ $weight_cookie = $_COOKIE['weight'];
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+	<div class="smalcart">
+				<strong>Товаров в корзине:</strong>	<?=$smal_cart['cart_count']?> шт.
+				<br/>
+				<strong>На сумму:</strong>	<?=$smal_cart['cart_price']?> руб.	
+				<br/>
+				<a href=''>Оформить заказ</a>
+			</div>	
+	<?php 
+	require_once('menu.php');
+
+
+	?>
 	
-	<?php echo(kkk); 
-	
-	require_once('menu.php');?>
-	
-	<div class="block">
-		<a target="_blank" href="delCook.php">удалить</a>
-		<a target="_blank" href="doc.1.html">Документ 1</a>
-	</div>
-	<div class="block"></div>
-		<a target="_self" href="">Документ 2</a>
-	<div class="block"></div>
-		<a target="_self" href="">Документ 3</a>
+
 
 <script src="js/app.min.js"></script>
 </body>

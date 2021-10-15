@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 $select_c = '0 товаров';
 if(isset($_COOKIE['name'])){
     $head = '<div class="col-lg-12 cookie-form d-flex flex-column align-items-center">
@@ -17,28 +17,17 @@ if(isset($_COOKIE['name'])){
 		    $select3 = $son->query("SELECT  id, foto, types, name, value, ingredients, weight  FROM maincoarse WHERE types = 'Desserts' LIMIT 180");
 		    $select11 = $son->query("SELECT nameExtras, valueExtras  FROM mainextras");
             $select12 = $son->query("SELECT nameBeverages, valueBeverages  FROM mainbeverages");
-		    
-	        $maindishes = 'Main Dishes';
-	        $desserts = 'Desserts';
-	        $appetizers = 'Appetizers';
-		    $ex = 'Extras';
-		    $bev = 'Beverages';
-
-	        
-         	
-                
-	
-	    
-            
-
-
-
-
-	if (empty($_GET["size"])){
+		if (empty($_GET["size"])){
 		
          while($info = $select1->fetch_array()){
 
-         	
+         	$сatalogItems[]=array(
+				"id"=>$info['id'],
+				"name"=>$info['name'],
+				"price"=>$info['value'],
+								
+			);
+
     	   echo'<div class="block-product d-flex justify-content-center border">
 		    <div class="block-product-left d-flex justify-content-center">
 		    	       
@@ -60,7 +49,7 @@ if(isset($_COOKIE['name'])){
 				        <div class="buttonButton">
 				        	
 				        
-				        	<input type="submit" name="submit"></div>
+				        	<a href="/catalog?in-cart-product-id="'.$info["id"].'">В корзину</a>
 				        	
 				        </form>
 				        </div>
@@ -68,11 +57,14 @@ if(isset($_COOKIE['name'])){
 				        </div>
 		        </div>'; 
 
-				}}
+				}
+			 }
+
+			
 				
 				
 				
-echo $head;
+
 
 
  
