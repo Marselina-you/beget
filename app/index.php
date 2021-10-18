@@ -1,29 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>beget</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/app.min.css">
-	<script src="js/jquery-3.0.0.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-	<div class="smalcart">
-				<strong>Товаров в корзине:</strong>	<?=$smal_cart['cart_count']?> шт.
-				<br/>
-				<strong>На сумму:</strong>	<?=$smal_cart['cart_price']?> руб.	
-				<br/>
-				<a href=''>Оформить заказ</a>
-			</div>	
-	<?php 
-	require_once('menu.php');
+<?php
+require_once "config.php"; //файл настроек
+$router=new Lib_Application; //создаем объект, который будет искать нуджные контролеры
+$member=$router->Run();//Начинаем поиск нужного контролера
+
+if(isset($member)) //если контролер вернул какието переменные, то делаеми их доступными для публичной части
+  foreach ($member as $key => $value)
+    {
+        $$key= $value; 
+        // Возможно здесь кому-то будет не понятно назначение оператора $$.
+        // Приведу пример
+        //  $a="b";
+        //  $$a=1;
+        //  echo $b;
+        // В результате на выходе получим: 1
+        // Можно провести аналогию оператора $$ с указателями в C++
+
+    }
+    
+    
+require_once "function.php";//подключаем функционал сайта
+require_once "./template/index.php";//подключаем шаблон сайта 
 
 
-	?>
+
+
+
+
+	
 	
 
 
-<script src="js/app.min.js"></script>
-</body>
-</html>
+
