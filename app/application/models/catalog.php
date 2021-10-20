@@ -5,7 +5,9 @@
 	  function getList()
 	  {  
 	  	 $son = new mysqli(HOST, USER, PASSWORD, NAME_BD);
-		 $result = $son->query("SELECT * FROM maincoarse");
+		 $result = $son->query("SELECT * FROM maincoarse WHERE types = 'Desserts'");
+		 $result1 = $son->query("SELECT * FROM maincoarse WHERE types = 'Appetizers' ");
+		 $result2 = $son->query("SELECT * FROM maincoarse WHERE types = 'Desserts' ");
 		
 	
 		 while ($row = $result->fetch_assoc())
@@ -15,7 +17,9 @@
 				"foto"=>$row['foto'],
 				"types"=>$row['types'],
 				"name"=>$row['name'],
-				"value"=>$row['value']	
+				"value"=>$row['value'],	
+				"ingredients"=>$row['ingredients'],
+				"weight"=>$row['weight']		
 						
 			);
 		  }

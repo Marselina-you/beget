@@ -26,6 +26,17 @@
 	    </div>	
 	</div>
 	
+	 <div class="page-title-header-content align-items-center col-xl-5 col-lg-6 offset-lg-3">
+		    	<div class="page-title-header-content__logo d-flex justify-content-center"><img src="images/dest/logotip.png"  width="75%" alt="Мустанг" />
+		    	</div>
+		    	<div class="page-title-header-content__name size48px fontSans font-weight-bold whitecolor text-center">BURRITO
+		    	</div>
+		    	<div class="page-title-header-content__decoration d-flex justify-content-center"><img src="images/dest/decor.png"   width="70%" alt="Мустанг" />
+		    	</div>
+		    	<div class="page-title-header-content__subname whitecolor size29px text-center">chili-bar
+		    	</div>
+		    </div>
+	
 	<script type="text/javascript">
 var slideshow=new TINY.fader.fade('slideshow',{
 	id:'slides',

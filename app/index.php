@@ -26,6 +26,7 @@ require_once "./template/index.php";//подключаем шаблон сайт
 
 
 
+
 	
 	
 

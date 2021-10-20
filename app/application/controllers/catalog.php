@@ -4,17 +4,17 @@
   {
      function index()
 	 {
-		 if($_REQUEST['in-cart-product-id']) 
+		 if($_REQUEST['in-cart-product-id']) //ЕСЛИ НАЖАЛИ 'ДОБАВИТЬ''
 			{
 			    $cart=new Application_Models_Cart;
 				$cart->addToCart($_REQUEST['in-cart-product-id']);
-				Lib_SmalCart::getInstance()->setCartData();
+				Lib_SmalCart::getInstance()->setCartData();// записывает в cokie текущее состояние корзины в сериализованном виде
 				header('Location: /catalog');
 				exit;
 			}
 			
 	     $model=new Application_Models_Catalog;
-		 $Items = $model->getList();	
+		 $Items = $model->getList();	//ищем в базе товары
 		 $this->Items=$Items;		
 	 }
   }

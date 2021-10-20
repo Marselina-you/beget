@@ -151,8 +151,6 @@ li
 .slider
 	display: flex
 	flex-direction: column
-	@media screen and (max-width: 576px)
-		display: none
 	@media screen and (max-width: 992px)
 		display: none
 .page-title
@@ -161,6 +159,10 @@ li
 		background: #F1F1F1 url(../images/dest/midy-fon.png) no-repeat
 		padding: 0 0 80px 0
 		margin-top: 0
+.page-title-header-content
+	margin-top: -600px
+	@media screen and (max-width: 992px)
+		display: none
 .page-title-header-left__subname, .page-title-header-left__decoration 
 	margin-top: -15px
 .page-title-header-content__logo
@@ -191,6 +193,8 @@ li
 		flex-direction: column
 		padding: 10px 10px
 		align-items: center
+		background: rgba(56, 60, 56, 0)
+
 .page-title-header-left__decoration
 	@media screen and (max-width: 576px)
 		display: none
@@ -206,8 +210,7 @@ li
 		&:hover
 			background: rgba(56, 60, 56, 0.9)
 			color: white
-.page-title-header-content
-	margin-top: 50px
+
 	//content
 .content-block1
 	background: url(../images/dest/contentFon1.jpg) no-repeat
@@ -505,6 +508,11 @@ span
 	position: relative
 	margin-top: -120px
 	z-index: 2
+.menu-header
+	margin-top: 100px
+.padding_menu
+	padding: 40px
+
 
 	
 
