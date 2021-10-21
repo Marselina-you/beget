@@ -21,7 +21,20 @@
 				 
 //то будем искать полученный в каталоге id продукта по запрашиваемой ссылке
 				 $son = new mysqli(HOST, USER, PASSWORD, NAME_BD);
-		       $result = $son->query("SELECT * FROM product WHERE url like '$route'");
+		       $result = $son->query("SELECT * FROM maincoarse WHERE url like '$route'");
+			
+				 if($row = $result->fetch_object())
+				 {
+					 $_REQUEST['id']=$row->id; //находим какой id у abricosa
+					 $route="product"; //а в $route возвращаем обратно продукт, чтоб по новой можно было жать по продуктам
+				 }
+				
+			}
+			if($rt[(count($rt)-2)]=="category"){	//если до /monitor есть /product/		
+				 
+//то будем искать полученный в каталоге id продукта по запрашиваемой ссылке
+				 $son = new mysqli(HOST, USER, PASSWORD, NAME_BD);
+		       $result = $son->query("SELECT * FROM maincoarse WHERE types_id like '$route'");
 			
 				 if($row = $result->fetch_object())
 				 {
