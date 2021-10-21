@@ -6,7 +6,7 @@
 	  { 
 
 	  	$son = new mysqli('localhost','root','root', 'burrito');
-		$result = $son->query("SELECT * FROM maincoarse");
+		$result = $son->query("SELECT * FROM maincoarse WHERE types_id = '3'");
 
 		 
 		 
@@ -14,6 +14,8 @@
 		 if($row = $result->fetch_object())
 		 {		 
 		
+			 while ($row = $result->fetch_assoc())
+		 {		 
 			$categoryItems[]=array(
 				"id"=>$row['id'],
 				"foto"=>$row['foto'],
@@ -23,11 +25,10 @@
 				"name"=>$row['name'],
 				"value"=>$row['value'],	
 				"ingredients"=>$row['ingredients'],
-				"weight"=>$row['weight']	
+				"weight"=>$row['weight']		
 						
-				
-				
 			);
+		  }
 			
 		  }
 		  return $categoryItems; 
