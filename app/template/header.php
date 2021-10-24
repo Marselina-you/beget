@@ -28,7 +28,7 @@
 
 				<?=$menu?>
 			<div class="smalcart">
-				<div class="d-flex align-items-center"><strong><img src="/images/dest/basket.png"/></strong><div class="whitecolor">	<?=$smal_cart['cart_count']?></div><div class="whitecolor">	(<?=$smal_cart['cart_price']?> руб.	)</div></div>
+				<div class="d-flex align-items-center"><strong><a href='/cart'><img src="/images/dest/basket.png"/></a></strong><div class="whitecolor">	<?=$smal_cart['cart_count']?></div><div class="whitecolor">	(<?=$smal_cart['cart_price']?> &#8364;	)</div></div>
 				
 				
 				

@@ -35,13 +35,13 @@
 		   {
 				foreach ($_SESSION['cart'] as $id=>$count){ // пробегаем по содержимому, вычилсяя сумму и количество
 
-					$son = new mysqli('localhost','root','root', 'life');
-		      $result = $son->query("SELECT p.price FROM product p WHERE id='{$id}'"); //d фигурных скобках задаются некоторые особые последовательности, 
-
+					$son = new mysqli('localhost','root','root', 'burrito');
+		      $result = $son->query("SELECT value FROM maincoarse WHERE id='{$id}'"); //d фигурных скобках задаются некоторые особые последовательности, 
+//не забудь сделать базу для буррито
 					
 					if($row = $result->fetch_assoc())
 						 {		 
-							$total_price+=$row['price']*$count;
+							$total_price+=$row['value']*$count;
 							$total_count+=$count;
 						 }	 
 				}

@@ -21,7 +21,7 @@ foreach($Items as $item)
 		    	        <div class="block-product-left__img padding_menu">
 					<a href="/product/<?=$item["url"]?>"><img src="/images/dest/<?=$item["id"]?>.png" /></a></div>
 		    	    </div>
-				<div class="block-product-right d-flex flex-column  col-xl-4 justify-content-center">
+				<div class="block-product-right d-flex flex-column col-xl-4 justify-content-center">
 
 				<div class="block-product-right-title d-flex justify-content-center align-items-center">
 				<div class="block-product-right-title__name "><a href="/product/<?=$item["url"]?>" class="whitecolor fontSans size22px"><?=$item["url"]?></a></div>
