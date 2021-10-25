@@ -11,8 +11,8 @@
 		 
 		 
 	
-		 if($row = $result->fetch_object())
-		 {		 
+		
+				 
 		
 			 while ($row = $result->fetch_assoc())
 		 {		 
@@ -32,7 +32,7 @@
 			);
 		  }
 			
-		  }
+		  
 		  return $categoryItems; 
 	  }
   } 
