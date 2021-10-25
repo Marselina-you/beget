@@ -1,14 +1,14 @@
-<?php 
-$appetizers = 'Appetizers';
-?><div class="menu-header d-flex flex-column align-items-center justify-content-center">
-			<div class="whitecolor fontSans size48px">Menu</div>
-			<hr align="center" width="400" size="5" color="White" /></div>
- <div class="menu-products d-flex flex-column justify-content-center">
-				<?=$menu_category?></div></div>
-<div class="menu-header d-flex flex-column align-items-center justify-content-center">
-			<div class="whitecolor fontSans size18px"><?=$appetizers?></div>
-			</div>
-<?
+<?php echo '<div class="block d-flex justify-content-center align-items-center">';
+		$son = new mysqli('localhost','root','root', 'burrito');
+            $select1 = $son->query("SELECT   types_id, types   FROM categories ");
+            while($info = $select1->fetch_array()){
+           
+               echo'
+                        
+                            <div class="block-product-right-title__name whitecolor fontSans size22px"><a href="/category/'.$info['types'].'">'.$info['types'].'</a></div>';
+                        }
+                        echo '</div>';
+		
 
 
 

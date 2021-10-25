@@ -16,7 +16,7 @@
 	 
 	public function  getMenu()
 	 {	
-	   $print="<div class=' page-title-header-menu d-flex col-lg-12 d-flex justify-content-between'>";	 
+	   $print="<div class=' page-title-header-menu align-items-center d-flex col-lg-12 d-flex justify-content-between'>";	 
        foreach($this->MenuItem as $name=>$item ){
        	
 	    		

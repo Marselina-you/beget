@@ -2,11 +2,11 @@
 //Модель вывода каталога
  class Application_Models_Category
   {	  
-	  function getCategory()
+	  function getCategory($types)
 	  { 
 
 	  	$son = new mysqli('localhost','root','root', 'burrito');
-		$result = $son->query("SELECT * FROM maincoarse WHERE types_id = '3'");
+		$result = $son->query("SELECT * FROM maincoarse WHERE types = '$types'");
 
 		 
 		 
@@ -26,6 +26,8 @@
 				"value"=>$row['value'],	
 				"ingredients"=>$row['ingredients'],
 				"weight"=>$row['weight']		
+						
+					
 						
 			);
 		  }

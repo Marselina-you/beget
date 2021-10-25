@@ -5,7 +5,7 @@
      function index()
 	 {
 	     $model=new Application_Models_Category;
-		 $category = $model->getCategory($_REQUEST['types_id']);	
+		 $category = $model->getCategory($_REQUEST['types']);	
 		 $this->category=$category;
 		
 	 }

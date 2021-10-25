@@ -5,7 +5,7 @@
 
   class Lib_MenuCategory
   {
-	public $MenuItem = array("Appetizers"=>"/category/2", "MainDishes"=>"/category/1", "Desserts"=>"/category/3");     
+	public $MenuItem = array("Appetizers"=>"/category/2", "MainDishes"=>"catalog.php?size=maindishes", "Desserts"=>"/category/3");     
    
 	protected static $instance; //(экземпляр объекта) Защищаем от создания через new Singleton
 	private function __construct() {}	

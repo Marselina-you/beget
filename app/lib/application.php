@@ -35,11 +35,11 @@
 				 
 //то будем искать полученный в каталоге id продукта по запрашиваемой ссылке
 				 $son = new mysqli(HOST, USER, PASSWORD, NAME_BD);
-		       $result = $son->query("SELECT * FROM maincoarse WHERE types_id like '$route'");
+		       $result = $son->query("SELECT * FROM maincoarse WHERE types like '$route'");
 			
 				 if($row = $result->fetch_object())
 				 {
-					 $_REQUEST['id']=$row->id; //находим какой id у abricosa
+					 $_REQUEST['types']=$row->types; //находим какой id у abricosa
 					 $route="category"; //а в $route возвращаем обратно продукт, чтоб по новой можно было жать по продуктам
 					 //если сделать продукт то показывает страницу Продукт, отображающий 1 продукт с выбранной категорией
 				 }
