@@ -6,7 +6,7 @@
 	  {  
 	  	 $son = new mysqli(HOST, USER, PASSWORD, NAME_BD);
 		 
-		 $result1 = $son->query("SELECT * FROM maincoarse WHERE types = 'Desserts' ");
+		 $result1 = $son->query("SELECT * FROM maincoarse WHERE types = 'Appetizers' ");
 		 $result2 = $son->query("SELECT * FROM maincoarse WHERE types = 'Desserts' ");
 		
 	if (empty($_GET["size"])){
